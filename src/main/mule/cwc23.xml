@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="df4b50a3-902a-4d42-bd71-87b8303f35b1" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="cwc23Flow" doc:id="090d34eb-aed7-4455-89e4-881ca3340d18" >
+		<http:listener doc:name="Listener" doc:id="4207a4d1-939a-49df-b764-85ed2343e75f" config-ref="HTTP_Listener_config" path="/bestPerformer"/>
+		<set-payload value='#["Virat Kohli"]' doc:name="Set Payload" doc:id="a56e5178-30f6-4cd1-a5e3-bfb00cdc5542" />
+	</flow>
+</mule>
