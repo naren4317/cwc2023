@@ -29,9 +29,26 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+			    <cloudHubDeployment>
+			      <uri>https://anypoint.mulesoft.com</uri>
+			      <muleVersion>4.5.1</muleVersion>
+			      <username>${username}</username>
+			      <password>${password}</password>
+			      <applicationName>cwc2023</applicationName>
+			      <environment>Sandbox</environment>
+			      <workers>1</workers>
+			      <workerType>MICRO</workerType>
+			      <objectStoreV2>true</objectStoreV2>
+			      <region>us-east-2</region>
+			    </cloudHubDeployment>
+			  </configuration>
 			</plugin>
 		</plugins>
 	</build>
+			      
+	
+	
 
 	<dependencies>
 		<dependency>
